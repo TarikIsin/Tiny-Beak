@@ -286,8 +286,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121815689}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2364132, y: 0, z: 0, w: 0.9716526}
-  m_LocalPosition: {x: 0, y: 2.16625, z: -8.7}
+  m_LocalRotation: {x: 0.11840869, y: 0, z: 0, w: 0.992965}
+  m_LocalPosition: {x: 0, y: 2.16625, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -319,7 +319,7 @@ MonoBehaviour:
   Damping: {x: 1, y: 1}
   Lookahead:
     Enabled: 1
-    Time: 0.1
+    Time: 0.2
     Smoothing: 5.6
     IgnoreY: 0
 --- !u!114 &121815692
@@ -335,10 +335,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineThirdPersonFollow
   Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0, y: 1.5, z: 0.3}
+  ShoulderOffset: {x: 0, y: 1.5, z: -1}
   VerticalArmLength: 0.7
-  CameraSide: 1
-  CameraDistance: 3
+  CameraSide: 0
+  CameraDistance: 5
   AvoidObstacles:
     Enabled: 0
     CollisionFilter:
@@ -372,10 +372,10 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 60
-    OrthographicSize: 5
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FieldOfView: 40
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -710,11 +710,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -738,8 +738,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2364132, y: 0, z: 0, w: 0.9716526}
-  m_LocalPosition: {x: 0, y: 2.16625, z: -8.7}
+  m_LocalRotation: {x: 0.11840869, y: 0, z: 0, w: 0.992965}
+  m_LocalPosition: {x: 0, y: 2.16625, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1927,13 +1927,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   orientationT: {fileID: 634531818}
-  movementKey: 101
   moveSpeed: 70
-  jumpKey: 32
   jumpForce: 8
   jumpCooldown: 0.5
   canJump: 1
-  slideKey: 113
+  airMultiplier: 0.2
+  airDrag: 0.75
   slideMuliplier: 1.2
   slideDrag: 2
   playerHeight: 1
@@ -2668,7 +2667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2581413036162552390}
   m_Layer: 0
-  m_Name: root
+  m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2700,6 +2699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569871231234562330}
+  - component: {fileID: 2198492456153449377}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -2707,6 +2707,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &2198492456153449377
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198492456153449376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86e1a1fd14768e14d98a5d6bb2856ee4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2387119512088296992
 MeshFilter:
   m_ObjectHideFlags: 0

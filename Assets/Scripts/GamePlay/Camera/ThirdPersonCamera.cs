@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
@@ -14,11 +15,23 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         Vector3 viewDirection = playerTransform.position - new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
         orientationTransform.forward = viewDirection.normalized;
-    
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
 
-        Vector3 inputDirection = orientationTransform.forward * verticalInput + orientationTransform.right * horizontalInput;
+        Vector2 moveInput = Vector2.zero;
+
+        if (Keyboard.current != null)
+        {
+            float horizontal = 0f;
+            float vertical = 0f;
+
+            if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) horizontal = -1f;
+            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) horizontal = 1f;
+            if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) vertical = -1f;
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) vertical = 1f;
+
+            moveInput = new Vector2(horizontal, vertical);
+        }
+
+        Vector3 inputDirection = orientationTransform.forward * moveInput.y + orientationTransform.right * moveInput.x;
 
         if (inputDirection != Vector3.zero)
         {

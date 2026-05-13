@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public event Action OnPlayerJumped;
+
     [Header("References")]
     [SerializeField] private Transform orientationT;
 
@@ -166,6 +169,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerJump()
     {
+        OnPlayerJumped?.Invoke();
         rb.linearVelocity =
             new Vector3(
                 rb.linearVelocity.x,
