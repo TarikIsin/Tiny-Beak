@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
 
+
+    private float startingMoveSpeed;
+    private float startingJumpForce;
+
     private float horizontalInput;
     private float verticalInput;
     private Vector3 movementDirection;
@@ -47,6 +51,9 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
 
         keyboard = Keyboard.current;
+
+        startingMoveSpeed = moveSpeed;
+        startingJumpForce = jumpForce;
     }
 
     private void Update()
@@ -184,6 +191,28 @@ public class PlayerController : MonoBehaviour
         canJump = true;
     }
 
+    public void SetMovementSpeed(float speed, float duration)
+    {
+        moveSpeed += speed;
+        Invoke(nameof(ResetMovementSpeed), duration);
+    }
+
+    private void ResetMovementSpeed()
+    {
+        moveSpeed = startingMoveSpeed;
+    }
+
+    public void SetJumpForce(float force, float duration)
+    {
+        jumpForce += force;
+        Invoke(nameof(ResetJumpForce), duration);
+    }
+
+    private void ResetJumpForce()
+    {
+        jumpForce = startingJumpForce;
+    }
+    #region Helper Functions
     private bool IsGrounded()
     {
         return Physics.Raycast(
@@ -202,4 +231,6 @@ public class PlayerController : MonoBehaviour
     {
         return isSliding;
     }
+
+    #endregion
 }
