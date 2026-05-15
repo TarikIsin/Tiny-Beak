@@ -707,9 +707,10 @@ GameObject:
   m_Component:
   - component: {fileID: 368168835}
   - component: {fileID: 368168836}
+  - component: {fileID: 368168837}
   m_Layer: 0
   m_Name: GoldWheat
-  m_TagString: Untagged
+  m_TagString: GoldWheat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -745,12 +746,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.75981253, y: 1.0212398, z: 0.18395299}
   m_Center: {x: 0.031711906, y: -0.19067419, z: 0.0041211247}
+--- !u!114 &368168837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368168834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fca6282d264714e9de9c2dee9867f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoldWheatCollectible
+  controller: {fileID: 1394476614}
+  moveIncreasedSpeed: 15
+  resetBoostDuration: 5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1857,7 @@ GameObject:
   - component: {fileID: 1394476614}
   - component: {fileID: 1394476615}
   - component: {fileID: 1394476616}
+  - component: {fileID: 1394476617}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1966,6 +1983,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
   playerAnimator: {fileID: 2198492456153449377}
+--- !u!114 &1394476617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394476610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a05504191b29046b38a6a013102918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractionController
 --- !u!1 &1452043596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,9 +2119,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1465635648}
   - component: {fileID: 1465635647}
+  - component: {fileID: 1465635649}
   m_Layer: 0
   m_Name: HolyWheat
-  m_TagString: Untagged
+  m_TagString: HolyWheat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2112,7 +2142,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2134,6 +2164,21 @@ Transform:
   - {fileID: 1162059002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1465635649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465635646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65cc72f57e105a46b8e4a5cb801a745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HolyWheatCollectible
+  controller: {fileID: 1394476614}
+  forceIncrease: 8
+  resetBoostDuration: 5
 --- !u!1 &1543462433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,9 +2511,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1986358548}
   - component: {fileID: 1986358547}
+  - component: {fileID: 1986358549}
   m_Layer: 0
   m_Name: RottenWheat
-  m_TagString: Untagged
+  m_TagString: RottenWheat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2488,7 +2534,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2510,6 +2556,21 @@ Transform:
   - {fileID: 1086595551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986358549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986358546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bfecd92482e7b4091e9cdf45392ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RottenWheatCollectible
+  controller: {fileID: 1394476614}
+  moveDecreasedSpeed: -25
+  resetBoostDuration: 5
 --- !u!1 &2118190298
 GameObject:
   m_ObjectHideFlags: 0

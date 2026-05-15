@@ -4,19 +4,9 @@ public class PlayerInteractionController : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag(Conts.WheatTypes.GoldWheat))
+        if (other.gameObject.TryGetComponent<IColectibles>(out var collectible))
         {
-            other.gameObject?.GetComponent<GoldWheatCollectible>().Collect();
-        }
-
-        if (other.CompareTag(Conts.WheatTypes.HolyWheat))
-        {
-            other.gameObject?.GetComponent<HolyWheatCollectible>().Collect();
-        }
-
-        if (other.CompareTag(Conts.WheatTypes.RottenWheat))
-        {
-            other.gameObject?.GetComponent<RottenWheatCollectible>().Collect();
+            collectible.Collect();
         }
     }
 }
