@@ -212,6 +212,12 @@ public class PlayerController : MonoBehaviour
     {
         jumpForce = startingJumpForce;
     }
+
+    public Rigidbody GetPlayerRigidbody()
+    {
+        return rb;
+    }
+
     #region Helper Functions
     private bool IsGrounded()
     {

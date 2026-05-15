@@ -27,13 +27,13 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void PlayerController_OnPlayerJumped()
     {
-        playerAnimator.SetBool(Conts.PlayerAnimations.IsJumping, true);
+        playerAnimator.SetBool(Consts.PlayerAnimations.IsJumping, true);
         Invoke(nameof(PlayerController_OnPlayerLanded), 0.5f);
     }
 
     private void PlayerController_OnPlayerLanded()
     {
-        playerAnimator.SetBool(Conts.PlayerAnimations.IsJumping, false);
+        playerAnimator.SetBool(Consts.PlayerAnimations.IsJumping, false);
     }
 
     private void SetPlayerAnimations()
@@ -42,23 +42,23 @@ public class PlayerAnimationController : MonoBehaviour
         switch (currentState)
         {
             case PlayerState.Idle:
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsSliding, false);
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsMoving, false);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsSliding, false);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsMoving, false);
                 break;
 
             case PlayerState.Move:
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsMoving, true);
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsSliding, false);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsMoving, true);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsSliding, false);
                 break;
 
             case PlayerState.SlideIdle:
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsSlidingActive, false);
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsSliding, true);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsSlidingActive, false);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsSliding, true);
                 break;
 
             case PlayerState.Slide:
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsSlidingActive, true);
-                playerAnimator.SetBool(Conts.PlayerAnimations.IsSliding, true);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsSlidingActive, true);
+                playerAnimator.SetBool(Consts.PlayerAnimations.IsSliding, true);
                 break;
         }
     }
