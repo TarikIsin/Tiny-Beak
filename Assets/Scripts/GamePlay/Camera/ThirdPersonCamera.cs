@@ -13,7 +13,14 @@ public class ThirdPersonCamera : MonoBehaviour
 
     private void Update()
     {
-        Vector3 viewDirection = playerTransform.position - new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
+        if(GameManager.Instance.GetCurrentGameState() != GameState.Play 
+            && GameManager.Instance.GetCurrentGameState() != GameState.Resume)
+        {
+            return;
+        }
+
+        Vector3 viewDirection = playerTransform.position - new Vector3(transform.position.x,
+            playerTransform.position.y, transform.position.z);
         orientationTransform.forward = viewDirection.normalized;
 
         Vector2 moveInput = Vector2.zero;
@@ -31,11 +38,13 @@ public class ThirdPersonCamera : MonoBehaviour
             moveInput = new Vector2(horizontal, vertical);
         }
 
-        Vector3 inputDirection = orientationTransform.forward * moveInput.y + orientationTransform.right * moveInput.x;
+        Vector3 inputDirection = orientationTransform.forward * moveInput.y
+            + orientationTransform.right * moveInput.x;
 
         if (inputDirection != Vector3.zero)
         {
-            playerVisualTransform.forward = Vector3.Slerp(playerVisualTransform.forward, inputDirection.normalized, Time.deltaTime * rotationSpeed);
+            playerVisualTransform.forward = Vector3.Slerp(playerVisualTransform.forward,
+                inputDirection.normalized, Time.deltaTime * rotationSpeed);
         }
     }
 }

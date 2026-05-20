@@ -14,27 +14,66 @@ public class TimerUI : MonoBehaviour
     [SerializeField] private Ease rotationEase;
 
     private float elapsedTime;
+    private bool isTimerRunning;
+    private Tween rotationTween;
 
     private void Start()
     {
         PlayRotationAnimation();
         StartTimer();
+
+        GameManager.Instance.OnGameStateChanged += GameManager_OnGameStateChanged;
+    }
+
+    private void GameManager_OnGameStateChanged(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.Pause:
+                PauseTimer();
+                break;
+            case GameState.Resume:
+                ResumeTimer();
+                break;
+        }
     }
 
     private void PlayRotationAnimation()
     {
-        timerRotatableTransform.DORotate(new Vector3(0f, 0f, -360f), rotationDuration,
+        rotationTween = timerRotatableTransform.DORotate(new Vector3(0f, 0f, -360f), rotationDuration,
             RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(rotationEase);
     }
 
     private void StartTimer()
     {
+        isTimerRunning = true;
         elapsedTime = 0f;
         InvokeRepeating(nameof(UpdateTimeUI), 0f, 1f);
     }
 
+    private void PauseTimer()
+    {
+        isTimerRunning = false;
+        CancelInvoke(nameof(UpdateTimeUI));
+        rotationTween.Pause();
+    }
+
+    private void ResumeTimer()
+    {
+        if (!isTimerRunning) 
+        {
+            isTimerRunning = true;
+            InvokeRepeating(nameof(UpdateTimeUI), 0f, 1f);
+            rotationTween.Play();
+        }
+    }
+
     private void UpdateTimeUI()
     {
+        if (!isTimerRunning)
+        {
+            return;
+        }
         elapsedTime += 1f;
 
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);
