@@ -1,5 +1,9 @@
 public class Consts
 {
+    public struct SceneNames
+    {
+        public const string GameScene = "GameScene";
+    }
 
     public struct PlayerAnimations
     {
