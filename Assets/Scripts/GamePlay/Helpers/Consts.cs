@@ -5,6 +5,13 @@ public class Consts
         public const string GameScene = "GameScene";
     }
 
+    public struct Layers
+    {
+        public const string GroundLayer = "Ground";
+        public const string FloorLayer = "Floor";
+
+    }
+
     public struct PlayerAnimations
     {
         public const string IsMoving = "IsMoving";

@@ -232,6 +232,22 @@ public class PlayerController : MonoBehaviour
         return rb;
     }
 
+    public bool CanCatChase()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit,
+            playerHeight * 0.5f + 0.2f, groundLayer))
+        {
+            if(hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.FloorLayer)){
+                return true;
+            } else if(hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.GroundLayer))
+            {
+                return false;
+            }
+        }
+
+        return false;
+    }
+
     #region Helper Functions
     private bool IsGrounded()
     {
