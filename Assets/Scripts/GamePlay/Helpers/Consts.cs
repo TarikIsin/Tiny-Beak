@@ -3,6 +3,8 @@ public class Consts
     public struct SceneNames
     {
         public const string GameScene = "GameScene";
+        public const string MenuScene = "MenuScene";
+
     }
 
     public struct Layers
