@@ -19,6 +19,13 @@ public class Consts
         public const string IsJumping = "IsJumping";
         public const string IsSlidingActive = "IsSlidingActive";
     }
+    public struct CatAnimations
+    {
+        public const string IsIdling = "IsIdling";
+        public const string IsWalking = "IsWalking";
+        public const string IsRunning = "IsRunning";
+        public const string IsAttacking = "IsAttacking";
+    }
 
     public struct WheatTypes 
     {
