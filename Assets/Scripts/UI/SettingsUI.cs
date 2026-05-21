@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsUI : MonoBehaviour
@@ -29,6 +30,10 @@ public class SettingsUI : MonoBehaviour
 
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         resumeButton.onClick.AddListener(OnResumeButtonClicked);
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(Consts.SceneNames.MenuScene);
+        });
     }
 
     private void OnSettingsButtonClicked()

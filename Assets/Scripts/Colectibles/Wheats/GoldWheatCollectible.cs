@@ -26,6 +26,8 @@ public class GoldWheatCollectible : MonoBehaviour, IColectibles
             wheatDesignSO.PassiveSprite, wheatDesignSO.ActiveWheatSprite,
             wheatDesignSO.PassiveWheatSprite, wheatDesignSO.ResetBoostDuration);
 
+        CameraShake.Instance.ShakeCamera(.2f, .2f);
+
         Destroy(gameObject);
     }
 }

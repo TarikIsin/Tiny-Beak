@@ -10,6 +10,8 @@ public class EggCollectible : MonoBehaviour, IColectibles
         _isCollected = true;
 
         GameManager.Instance.OnEggCollected();
+        CameraShake.Instance.ShakeCamera(.2f, .2f);
+
         Destroy(gameObject);
     }
 }

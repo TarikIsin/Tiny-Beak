@@ -140,12 +140,4 @@ public class CatController : MonoBehaviour
         }
         return false;
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Vector3 pos = (initialPosition != Vector3.zero) ? initialPosition : transform.position;
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(pos, patrolRadius);
-    }
 }
