@@ -18,10 +18,19 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
 
+    [Header("Sprites")]
+    [SerializeField] private Sprite musicOnSprite;
+    [SerializeField] private Sprite musicOffSprite;
+    [SerializeField] private Sprite soundOnSprite;
+    [SerializeField] private Sprite soundOffSprite;
+
     [Header("Settings")]
     [SerializeField] private float animationDuration;
 
     private Image blackBackgroundImage;
+
+    private bool isMusicOn = true;
+    private bool isSoundOn = true;
 
     private void Awake()
     {
@@ -35,6 +44,25 @@ public class SettingsUI : MonoBehaviour
             AudioManager.Instance.Play(SoundType.TransitionSound);
             SceneManager.LoadScene(Consts.SceneNames.MenuScene);
         });
+
+        musicButton.onClick.AddListener(OnMusicButtonClicked);
+        soundButton.onClick.AddListener(OnSoundButtonClicked);
+    }
+
+    private void OnMusicButtonClicked()
+    {
+        AudioManager.Instance.Play(SoundType.ButtonClickSound);
+        isMusicOn = !isMusicOn;
+        musicButton.image.sprite = isMusicOn ? musicOnSprite : musicOffSprite;
+        BackgroundMusic.Instance.SetMusicMute(!isMusicOn);
+    }
+
+    private void OnSoundButtonClicked()
+    {
+        AudioManager.Instance.Play(SoundType.ButtonClickSound);
+        isSoundOn = !isSoundOn;
+        soundButton.image.sprite = isSoundOn ? soundOnSprite : soundOffSprite;
+        AudioManager.Instance.SetSoundEffectsMute(!isSoundOn);
     }
 
     private void OnSettingsButtonClicked()
