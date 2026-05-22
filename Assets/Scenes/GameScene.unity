@@ -1012,6 +1012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 216838320}
+  - component: {fileID: 216838325}
   - component: {fileID: 216838323}
   - component: {fileID: 216838322}
   - component: {fileID: 216838321}
@@ -1147,6 +1148,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &216838325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216838319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &234404380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2295940216164115223, guid: ccc0a392cf20f87419296d839b612b04, type: 3}
@@ -2170,6 +2183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357703138}
+  - component: {fileID: 357703142}
   - component: {fileID: 357703141}
   - component: {fileID: 357703140}
   - component: {fileID: 357703139}
@@ -2281,6 +2295,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357703137}
   m_CullTransparentMesh: 1
+--- !u!114 &357703142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357703137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &357859256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5414213801244180080, guid: ccc0a392cf20f87419296d839b612b04, type: 3}
@@ -4236,6 +4262,91 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -1.575, y: 1.8610001, z: -0.064}
   m_TimeToStationary: 0.5
+--- !u!1001 &792645325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 569586580149316385, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_Name
+      value: AudioMAnager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[6].SoundType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[7].SoundType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[8].SoundType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[9].AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d3a60b68b13294247a6169a04159cdc6, type: 3}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[9].SoundType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[10].SoundType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295805568355201063, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: Sounds.Array.data[11].SoundType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.49211
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98492
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.91654
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296913778652219364, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a694e29c7a3b92438b113bf2f8d6c4e, type: 3}
 --- !u!1 &796893748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,6 +5347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971261202}
+  - component: {fileID: 971261207}
   - component: {fileID: 971261205}
   - component: {fileID: 971261204}
   - component: {fileID: 971261203}
@@ -5370,6 +5482,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &971261207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971261201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &974596514
 GameObject:
   m_ObjectHideFlags: 0
@@ -7689,6 +7813,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1385995070}
+  - component: {fileID: 1385995075}
   - component: {fileID: 1385995073}
   - component: {fileID: 1385995072}
   - component: {fileID: 1385995071}
@@ -7824,6 +7949,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1385995075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385995069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &1392312347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8002056176360630925, guid: ccc0a392cf20f87419296d839b612b04, type: 3}
@@ -8404,6 +8541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1479911903}
+  - component: {fileID: 1479911908}
   - component: {fileID: 1479911906}
   - component: {fileID: 1479911905}
   - component: {fileID: 1479911904}
@@ -8539,6 +8677,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1479911908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479911902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &1480914380
 GameObject:
   m_ObjectHideFlags: 0
@@ -9358,6 +9508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598730640}
+  - component: {fileID: 1598730645}
   - component: {fileID: 1598730643}
   - component: {fileID: 1598730642}
   - component: {fileID: 1598730641}
@@ -9493,6 +9644,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1598730645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598730639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &1600887071
 GameObject:
   m_ObjectHideFlags: 0
@@ -10427,6 +10590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733414536}
+  - component: {fileID: 1733414541}
   - component: {fileID: 1733414539}
   - component: {fileID: 1733414538}
   - component: {fileID: 1733414537}
@@ -10562,6 +10726,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1733414541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733414535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!4 &1737843649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5733365701202523099, guid: e5e15a097c0037f4f8df4d547e3e94cf, type: 3}
@@ -11783,6 +11959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925646773}
+  - component: {fileID: 1925646778}
   - component: {fileID: 1925646776}
   - component: {fileID: 1925646775}
   - component: {fileID: 1925646774}
@@ -11918,6 +12095,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1925646778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925646772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1 &1937225677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1870082630823800860, guid: ccc0a392cf20f87419296d839b612b04, type: 3}
@@ -12324,6 +12513,7 @@ MonoBehaviour:
   boosterSpeedTransform: {fileID: 1580790883}
   boosterJumpTransform: {fileID: 78610610}
   boosterSlowTransform: {fileID: 1200155931}
+  playableDirector: {fileID: 520248751}
   goldBoosterWheatImage: {fileID: 1582838416}
   holyBoosterWheatImage: {fileID: 1244657420}
   rottenBoosterWheatImage: {fileID: 2073311031}
@@ -12342,6 +12532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2026349251}
+  - component: {fileID: 2026349255}
   - component: {fileID: 2026349254}
   - component: {fileID: 2026349253}
   - component: {fileID: 2026349252}
@@ -12453,6 +12644,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026349250}
   m_CullTransparentMesh: 1
+--- !u!114 &2026349255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026349250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c800fd8c0182de428ec7ac912ab8137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverController
 --- !u!1001 &2027830294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17300,6 +17503,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 974596515}
   - {fileID: 1970330150}
+  - {fileID: 792645325}
   - {fileID: 520248752}
   - {fileID: 1812206639}
   - {fileID: 615641261}

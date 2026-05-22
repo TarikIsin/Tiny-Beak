@@ -11,6 +11,8 @@ public class EggCollectible : MonoBehaviour, IColectibles
 
         GameManager.Instance.OnEggCollected();
         CameraShake.Instance.ShakeCamera(.2f, .2f);
+        AudioManager.Instance.Play(SoundType.PickupGoodSound);
+
 
         Destroy(gameObject);
     }
