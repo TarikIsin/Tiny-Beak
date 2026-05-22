@@ -11,17 +11,22 @@ public class WinPopup : MonoBehaviour
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private TMP_Text timerText;
 
-    private void OnEnable()
+    private void Awake()
     {
-        BackgroundMusic.Instance.PlayBackgroundMusic(false);
-        AudioManager.Instance.Play(SoundType.WinSound);
-        timerText.text = timerUI.GetFinalTime();
+        // Listener'lar sadece bir kez eklenmeli
         oneMoreButton.onClick.AddListener(OnOneMoreButtonClicked);
         mainMenuButton.onClick.AddListener(() =>
         {
             AudioManager.Instance.Play(SoundType.TransitionSound);
             SceneManager.LoadScene(Consts.SceneNames.MenuScene);
         });
+    }
+
+    private void OnEnable()
+    {
+        BackgroundMusic.Instance.PlayBackgroundMusic(false);
+        AudioManager.Instance.Play(SoundType.WinSound);
+        timerText.text = timerUI.GetFinalTime();
     }
 
     private void OnOneMoreButtonClicked()

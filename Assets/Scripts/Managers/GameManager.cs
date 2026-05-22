@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         HealthManager.Instance.OnPlayerDeath += HealthManager_OnPlayerDeath;
         catController.OnCatCatched += CatContoller_OnCatCatched;
+        BackgroundMusic.Instance.PlayBackgroundMusic(true);
     }
 
     private void CatContoller_OnCatCatched()
@@ -52,7 +53,6 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         ChangeGameState(GameState.CutScene);
-        BackgroundMusic.Instance.PlayBackgroundMusic(true);
     }
 
     public void ChangeGameState(GameState state)

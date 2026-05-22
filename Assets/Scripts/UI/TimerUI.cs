@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -23,12 +22,16 @@ public class TimerUI : MonoBehaviour
         GameManager.Instance.OnGameStateChanged += GameManager_OnGameStateChanged;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnGameStateChanged -= GameManager_OnGameStateChanged;
+    }
+
     private void GameManager_OnGameStateChanged(GameState state)
     {
         switch (state)
         {
             case GameState.Play:
-                PlayRotationAnimation();
                 StartTimer();
                 break;
             case GameState.Pause:
@@ -43,61 +46,62 @@ public class TimerUI : MonoBehaviour
         }
     }
 
-    private void PlayRotationAnimation()
-    {
-        rotationTween = timerRotatableTransform.DORotate(new Vector3(0f, 0f, -360f), rotationDuration,
-            RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(rotationEase);
-    }
-
     private void StartTimer()
     {
-        isTimerRunning = true;
         elapsedTime = 0f;
-        InvokeRepeating(nameof(UpdateTimeUI), 0f, 1f);
+        isTimerRunning = true;
+        UpdateTimerText();
+        PlayRotationAnimation();
+        InvokeRepeating(nameof(Tick), 1f, 1f);
     }
 
     private void StopTimer()
     {
         isTimerRunning = false;
-        CancelInvoke(nameof(UpdateTimeUI));
-        rotationTween.Pause();
+        CancelInvoke(nameof(Tick));
+        rotationTween?.Pause();
     }
 
     private void ResumeTimer()
     {
-        if (!isTimerRunning) 
-        {
-            isTimerRunning = true;
-            InvokeRepeating(nameof(UpdateTimeUI), 0f, 1f);
-            rotationTween.Play();
-        }
+        if (isTimerRunning) return;
+        isTimerRunning = true;
+        rotationTween?.Play();
+        InvokeRepeating(nameof(Tick), 1f, 1f);
     }
 
     private void FinishTimer()
     {
+        finalTime = GetFormattedTime(elapsedTime); 
         StopTimer();
-        finalTime = GetFormattedElapsedTime();
     }
 
-    private string GetFormattedElapsedTime()
+    private void Tick()
     {
-        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
-        return string.Format("{0:00} : {1:00}", minutes, seconds);
-    }
-
-    private void UpdateTimeUI()
-    {
-        if (!isTimerRunning)
-        {
-            return;
-        }
+        if (!isTimerRunning) return;
         elapsedTime += 1f;
+        UpdateTimerText();
+    }
 
-        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+    private void UpdateTimerText()
+    {
+        timerText.text = GetFormattedTime(elapsedTime);
+    }
 
-        timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    private void PlayRotationAnimation()
+    {
+        rotationTween?.Kill();
+        rotationTween = timerRotatableTransform
+            .DORotate(new Vector3(0f, 0f, -360f), rotationDuration, RotateMode.FastBeyond360)
+            .SetLoops(-1, LoopType.Restart)
+            .SetEase(rotationEase);
+    }
+
+    private string GetFormattedTime(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60f);
+        int seconds = Mathf.FloorToInt(time % 60f);
+        return string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
     public string GetFinalTime()
