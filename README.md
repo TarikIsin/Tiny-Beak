@@ -1,73 +1,112 @@
-🐣 TinyBeak
+# TinyBeak
 
-A 3D platformer built in Unity where you play as a chick navigating a kitchen environment — collecting eggs while avoiding hazards and outsmarting a roaming cat.
+TinyBeak is a 3D platformer game developed with Unity where the player controls a small chick trapped inside a dangerous kitchen.
 
-🎮 Gameplay Overview
-TinyBeak is a 3D kitchen-themed platformer. The player controls a small chick navigating elevated countertops, collecting 5 eggs to win — while managing health, movement modifiers, and a persistent threat from a cat AI below.
-Win condition: Collect all 5 eggs
-Lose conditions: Run out of lives (fire contact) or get caught by the cat
+The main objective is to collect 5 eggs scattered around the kitchen while avoiding hazards, using movement mechanics, and surviving enemy encounters.
 
-✨ Features & Technical Highlights
-🧠 AI — Cat Behavior (NavMesh)
+---
 
-The cat roams the kitchen floor randomly using Unity's NavMesh pathfinding
-When the player falls to the ground level, the cat dynamically switches to a chase state and pursues the player
-Uses a state machine pattern (Idle / Roam / Chase) driven by proximity and player height detection
+# Gameplay
 
-🌾 Power-up System — Wheat Collectibles
-Three distinct wheat types with different runtime effects applied to the player controller:
-Wheat TypeEffectSpeed WheatIncreases movement speedJump WheatIncreases jump forceSlow WheatReduces movement speed
+The player explores kitchen counters, jumps across obstacles, and collects eggs to complete the level.
 
-Effects are time-limited and managed via coroutines
-Each wheat type uses a ScriptableObject for configurable values without code changes
+However, the kitchen is filled with dangers:
 
-🔥 Hazard System — Stove Fire
+- Hot stoves with fire particles damage the player
+- A cat patrols the kitchen floor
+- Falling to the ground alerts the cat
+- If the cat catches the player, the game ends
+- Special spatulas launch the player upward
+- Different wheat pickups affect player movement
 
-Stoves on countertops emit Particle System fire effects
-Collision with fire particles triggers a damage event and decrements player health
-Health system supports multiple lives with visual UI feedback
+---
 
-🪃 Spatula Launch Mechanic
+# Features
 
-Spatulas placed near counters act as launch pads
-On contact, applies an upward impulse force to the player's Rigidbody, enabling vertical traversal
+## Movement Mechanics
+- 3D player controller
+- Jump system
+- Bounce mechanics using spatulas
+- Movement modifiers
 
-🎵 Audio System
+## Power-Ups
+There are 3 different wheat types:
+- Speed boost wheat
+- High jump wheat
+- Slow movement wheat
 
-Full AudioManager with singleton pattern
-Separate volume controls for SFX and Music persisted via PlayerPrefs
-Sound effects on: egg collection, wheat pickup, fire damage, cat catch, UI interactions
-Button hover sounds implemented via EventTrigger components on UI elements
+## Enemy AI
+- Randomly roaming cat AI
+- Cat detects the player when they fall to the floor
+- Chase mechanic
+- Game over system
 
-🖥️ UI & Menu Systems
+## Hazard System
+- Stove hazards with particle fire effects
+- Health reduction on collision
+- Player health system
 
-Main Menu with play, settings, and quit options
-Settings Panel: master/SFX/music volume sliders, return to menu button
-HUD: live health display, egg counter (collected / total)
-Pause Menu: resume, settings access, main menu navigation
-Win / Game Over screens with restart and menu options
-Scene transitions handled via SceneManager with a fade animation
+## UI & UX
+- Main menu
+- Settings menu
+- Audio toggle system
+- Return to menu button
+- UI panels
+- Button hover animations/effects
 
-⚙️ Architecture Notes
+## Audio
+- Sound effects
+- UI sounds
+- Gameplay feedback audio
 
-Player input handled via Unity's Input System
-Game state managed with a GameManager singleton (handles win/lose/pause logic)
-Modular component design: hazards, collectibles, and power-ups each have standalone scripts
-Physics-based movement using Rigidbody with custom ground detection via raycasts
+---
 
+# Technologies Used
 
-🛠️ Built With
-Unity
-C#
-Unity NavMesh for AI pathfinding
-Unity Particle System for fire hazards
-Unity Input System (new)
-Unity UI Toolkit / Legacy UI (Canvas)
+- Unity
+- C#
+- Unity Particle System
+- Unity UI System
 
+---
 
-🧩 What I Learned / Challenges
+# Game Objective
 
-Implementing a dual-state AI that transitions smoothly between roaming and chasing based on player position
-Designing a modular power-up system using ScriptableObjects to keep wheat behavior data-driven and designer-friendly
-Managing particle-based collision detection for fire hazards without performance overhead
-Building a centralized AudioManager that persists across scenes and responds to UI settings in real time
+Collect all 5 eggs without getting caught by the cat or losing all health points.
+
+---
+
+# Screenshots
+
+_Add gameplay screenshots or GIFs here._
+
+Example:
+
+![Gameplay Screenshot](images/gameplay.png)
+
+---
+
+# Controls
+
+| Action | Key |
+|---|---|
+| Move | WASD |
+| Jump | Space |
+| Pause/Menu | ESC |
+
+---
+
+# Future Improvements
+
+- More levels
+- Smarter enemy AI
+- Save system
+- Collectible variations
+- Better visual effects
+- Mobile support
+
+---
+
+# Developer
+
+Developed by Tarık Işın
