@@ -8751,12 +8751,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394476611}
-  - component: {fileID: 1394476613}
-  - component: {fileID: 1394476612}
   - component: {fileID: 1394476614}
   - component: {fileID: 1394476615}
   - component: {fileID: 1394476616}
   - component: {fileID: 1394476617}
+  - component: {fileID: 1394476613}
+  - component: {fileID: 1394476612}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
